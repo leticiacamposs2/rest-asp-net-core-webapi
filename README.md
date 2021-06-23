@@ -4,11 +4,11 @@ Repositório com os fontes desenvolvidos durante o curso REST com ASP.NET Core W
 
 ### 📖 Conteúdo
 
-- [REST](./anotacoes/REST.md)
-- Aplicação WebAPI
-- Controllers
-- API REST
-- Segurança
-- Versionamento e Documentação
-- Logging e Monitoramento
-- Deploy
+- [x] [REST](./anotacoes/REST.md)
+- [ ] Aplicação WebAPI
+- [ ] Controllers
+- [ ] API REST
+- [ ] Segurança
+- [ ] Versionamento e Documentação
+- [ ] Logging e Monitoramento
+- [ ] Deploy
