@@ -4,7 +4,7 @@ Repositório com os fontes desenvolvidos durante o curso REST com ASP.NET Core W
 
 ### 📖 Conteúdo
 
-- [REST](./REST.md)
+- [REST](./anotacoes/REST.md)
   - [x] O Protocolo HTTP
   - [x] REST vs SOAP
-  - [ ] Arquitetura REST
+  - [x] Arquitetura REST
