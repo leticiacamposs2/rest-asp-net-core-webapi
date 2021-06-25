@@ -12,7 +12,7 @@
     - [x] Aplicação WebAPI
 
 - [Controllers](./CONTROLLERS.md)
-    - [ ] Controller Diferenciada
+    - [x] Controller Diferenciada
     - [ ] Rotas
     - [ ] Action Results e Formatadores de Respostas
     - [ ] Analisadores e Convenções
