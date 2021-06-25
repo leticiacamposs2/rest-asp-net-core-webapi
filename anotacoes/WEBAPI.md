@@ -1,4 +1,18 @@
-﻿# ProductsAPI
+# WEBAPI 
+
+## ProductsAPIDemo
+
+#### 📖 Anotações
+
+- Criando um novo projeto `dotnet new webapi -n ProductsAPIDemo`
+- Executando a aplicação `dotnet run`
+- Por padrão a API será executada na URL `https://localhost:5001/WeatherForecast`
+- Para que a aplicação execute a cada mudança de assemby, execute o comando `dotnet watch run` e será recompilado toda vez que for feito uma alteração
+- Documentação Swagger: `https://localhost:5001/swagger/index.html`
+
+---
+
+## ProductsAPI
 Aplicação ASP .Net Core no modelo WebAPI
 
 #### 📖 Anotações
@@ -13,3 +27,4 @@ Aplicação ASP .Net Core no modelo WebAPI
 - O arquivo `appsettings.json` é onde se informa chaves de acesso, logs e etc, assim como definir chaves por tipo de ambiente
 - O arquivo `Program.cs` é o inicio da aplicação, ela que contém o método main e cria o IWebHostBuilder que é a criação de um HOST para rodar essa aplicação setando o arquivo `Startup` que é o mais importante da aplicação, pois é ele que contém todas as configurações da aplicação
 - O metodo `Configure` do arquivo `Startup`é aonde define os comportamentos para o ambiente, por exemplo: Se eu estiver em um ambiente de desenvolvimento se tiver um erro quero exibir uma página
+
