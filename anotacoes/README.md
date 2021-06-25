@@ -5,13 +5,13 @@
     - [x] REST vs SOAP
     - [x] Arquitetura REST
 
-- Aplicação WebAPI
-    - [ ] Linha de comando
-    - [ ] VS Code
-    - [ ] VS 2019 
-    - [ ] Aplicação WebAPI
+- [Aplicação WebAPI](./WEBAPI.md)
+    - [x] Linha de comando
+    - [x] VS Code
+    - [x] VS 2019 
+    - [x] Aplicação WebAPI
 
-- Controllers
+- [Controllers](./CONTROLLERS.md)
     - [ ] Controller Diferenciada
     - [ ] Rotas
     - [ ] Action Results e Formatadores de Respostas
