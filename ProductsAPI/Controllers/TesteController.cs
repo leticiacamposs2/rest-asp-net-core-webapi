@@ -42,6 +42,18 @@ namespace ProductsAPI.Controllers
 
             return Ok(valores);
         }
+
+        //GET /teste/obter-resultado
+        [HttpGet("obter-resultado")]
+        public ActionResult ObterResultado()
+        {
+            var valores = new string[] { "value1", "value2" };
+
+            if (valores.Length > 5000)
+                return BadRequest();
+
+            return valores;
+        }
     }
 
 }

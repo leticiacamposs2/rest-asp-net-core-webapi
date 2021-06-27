@@ -140,4 +140,36 @@ public ActionResult<IEnumerable<string>> ObterTodos()
 ![obter-todos](https://user-images.githubusercontent.com/34458509/123530690-ab945280-d6d3-11eb-87c7-727681c27a97.png)
 ![image](https://user-images.githubusercontent.com/34458509/123530696-bc44c880-d6d3-11eb-9661-8aa6c77041e4.png)
 
+Quando se tem uma action e não especifica o tipo não é possível retornar o valor direto e sim no formato de uma action, exemplo:
+
+```javascript
+// ---- ERRADO ---- //
+
+[HttpGet("obter-resultado")]
+public ActionResult ObterResultado()
+{
+    var valores = new string[] { "value1", "value2" };
+
+    if (valores.Length > 5000)
+        return BadRequest();
+
+    return valores;
+}
+
+
+// ---- CORRETO ---- //
+
+[HttpGet("obter-resultado")]
+public ActionResult ObterResultado()
+{
+    var valores = new string[] { "value1", "value2" };
+
+    if (valores.Length > 5000)
+        return BadRequest();
+
+    return Ok(valores);
+}
+```
+
+N
 

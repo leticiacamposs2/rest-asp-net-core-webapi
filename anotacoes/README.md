@@ -13,7 +13,7 @@
 
 - [Controllers](./CONTROLLERS.md)
     - [x] Controller Diferenciada
-    - [ ] Rotas
+    - [x] Rotas
     - [ ] Action Results e Formatadores de Respostas
     - [ ] Analisadores e Convenções
 
