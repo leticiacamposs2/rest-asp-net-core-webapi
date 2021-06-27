@@ -1,6 +1,6 @@
 # REST com ASP.NET Core WebAPI
 
-Repositório com os fontes desenvolvidos durante o curso REST com ASP.NET Core WebAPI do MVP Eduardo Pires
+Repositório com os fontes e algumas anotações do estudo para criação de uma aplicação REST com ASP.NET Core WebAPI
 
 ### 📖 Conteúdo
 
