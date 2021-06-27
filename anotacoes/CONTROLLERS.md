@@ -82,3 +82,57 @@ Caso não defina direto no atributo, será feito uma validação pelo tipo defin
 ---
 
 ## <a id="action-results" /> Action Results e Formatadores de Respostas
+
+- ActionResult é o resultado de uma Action, na minha aplicação eu a uso como um método da controller que diz que este método terá um ação como resultado.
+
+**Exemplo do uso da ActionResult:**
+
+Imagine que eu tenha 2 métodos o **ObterTodos** que utiliza o ActionResult e o método **ObterValores** que retorna direto o IEnumerable *(ambos vão funcionar)*.
+
+```javascript
+[HttpGet("obter-todos")]
+public ActionResult<IEnumerable<string>> ObterTodos()
+{
+    var valores = new string[] { "value1", "value2" };
+
+    return valores;
+}
+
+[HttpGet("obter-valores")]
+public IEnumerable<string> ObterValores()
+{
+    var valores = new string[] { "value1", "value2" };
+
+    return valores;
+}
+```
+
+Porém em uma situação hipotética eu precise retornar um BadRequest se uma condição não for atendida. No método ObterValores não será possível porque um BadRequest não é do tipo IEnumerable já no método ObterTodos será possivel, por se tratar de uma ação.
+
+```javascript
+[HttpGet("obter-todos")]
+public ActionResult<IEnumerable<string>> ObterTodos()
+{
+    var valores = new string[] { "value1", "value2" };
+
+    if (valores.length < 5000)
+        return BadRequest();
+
+    return valores;
+}
+```
+
+Outra coisa bacana de usar uma ActionResult é que eu posso retornar o meu resultado junto com o status code de sucesso
+
+```javascript
+[HttpGet("obter-todos")]
+public ActionResult<IEnumerable<string>> ObterTodos()
+{
+    var valores = new string[] { "value1", "value2" };
+
+    if (valores.length < 5000)
+        return BadRequest();
+
+    return Ok(valores);
+}
+```
