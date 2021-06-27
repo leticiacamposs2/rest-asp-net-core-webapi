@@ -136,3 +136,8 @@ public ActionResult<IEnumerable<string>> ObterTodos()
     return Ok(valores);
 }
 ```
+
+![obter-todos](https://user-images.githubusercontent.com/34458509/123530690-ab945280-d6d3-11eb-87c7-727681c27a97.png)
+![image](https://user-images.githubusercontent.com/34458509/123530696-bc44c880-d6d3-11eb-9661-8aa6c77041e4.png)
+
+
