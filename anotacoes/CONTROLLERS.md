@@ -6,6 +6,7 @@ Controller é muito importante para uma aplicação ASP .Net seja ela MVC ou Web
 - [Anotações](#anotacoes)
 - [Propriedades da ControllerBase](#propriedades-controller-base)
 - [Rotas](#rotas)
+- [Action Results e Formatadores de Respostas](#action-results)
 
 ## <a id="anotacoes" /> 📖 Anotações
 
@@ -78,3 +79,6 @@ Caso não defina direto no atributo, será feito uma validação pelo tipo defin
 ![api](https://user-images.githubusercontent.com/34458509/123529985-20fc2500-d6cc-11eb-8019-b68e8adcdee5.png)
 ![erro](https://user-images.githubusercontent.com/34458509/123530000-40934d80-d6cc-11eb-8a55-3dcd098076db.png)
 
+---
+
+## <a id="action-results" /> Action Results e Formatadores de Respostas
