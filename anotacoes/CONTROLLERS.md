@@ -85,7 +85,7 @@ Caso não defina direto no atributo, será feito uma validação pelo tipo defin
 
 - ActionResult é o resultado de uma Action, na minha aplicação eu a uso como um método da controller que diz que este método terá um ação como resultado.
 
-**Exemplo do uso da ActionResult:**
+#### Exemplo do uso da ActionResult
 
 Imagine que eu tenha 2 métodos o **ObterTodos** que utiliza o ActionResult e o método **ObterValores** que retorna direto o IEnumerable *(ambos vão funcionar)*.
 
@@ -171,5 +171,96 @@ public ActionResult ObterResultado()
 }
 ```
 
-N
+#### Modificadores de um método
 
+No método POST temos o modificador **FromBody** que indica que o valor enviado vai vim dentro do corpo do request Http
+
+```javascript
+// POST teste
+[HttpPost]
+public void Post([FromBody] string value)
+{
+}
+```
+
+No método PUT temos o modificador **FromRoute** que indica que o valor enviado vai vim pela rota
+
+```javascript
+// PUT teste/5
+[HttpPut("{id}")]
+public void Put([FromRoute] int id, [FromBody] string value)
+{
+}
+```
+
+*(na versão 2.1 em diante não é necessário incluir o FromRoute se você tiver especificado dentro do metodo e receber um parametro com o mesmo nome)*
+
+```javascript
+// PUT teste/5
+[HttpPut("{id}")]
+public void Put(int id, [FromBody] string value)
+{
+}
+```
+
+No método PUT temos o modificador **FromForm** que indica que o valor enviado vai vim de um form utilizando o atributo FormData dentro do request
+
+```javascript
+// PUT teste/5
+[HttpPut("{id}")]
+public void Put(int id, [FromForm] string value)
+{
+}
+```
+
+Quando se recebe um tipo complexo não é necessário especificar FromBody
+
+```javascript
+// POST teste
+[HttpPost]
+public void Post(Product value)
+{
+}
+
+public class Product
+{
+    public int Id { get; set; }
+
+    [Required]
+    public string Name { get; set; }
+
+    [Required]
+    public string Description { get; set; }
+}
+```
+
+**Modificadores**
+
+Modificador   | Descrição
+--------- | ------
+[FromQuery]	| Obtém valores da string de consulta.
+[FromRoute]	 | Obtém valores dos dados da rota.
+[FromForm]	 | Obtém valores de campos de formulário postados.
+[FromBody]	 | Obtém valores do corpo da solicitação.
+[FromHeader]	 | Obtém valores de cabeçalhos HTTP.
+[FromService]	 | Terá valor injetado pelo resolvedor DI (Injeção de Dependências).
+
+**Definindo respostas diferentes de acordo com o resultado**
+
+Com o uso do `ProducesResponseType` vai ser resolvido o tipo, no meu caso ele vai resolver o tipo Product com o retorno de um status code 201 e caso não seja do tipo Product ele retorna um status code 400
+
+```javascript
+    //POST /teste
+    [HttpPost]
+    [ProducesResponseType(typeof(Product), StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public ActionResult Post(Product product)
+    {
+        if (product.Id == 0) return BadRequest();
+
+        // add no banco
+        return CreatedAtAction("Post", product);
+    }
+```
+
+Uma vantagem de usar o `ProducesResponseType` é que na hora de documentar usando o Swagger por exemplo ele já vai entender os tipos de retornos possíveis e o que ela devolve.

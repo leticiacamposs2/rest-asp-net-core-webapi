@@ -14,7 +14,7 @@
 - [Controllers](./CONTROLLERS.md)
     - [x] Controller Diferenciada
     - [x] Rotas
-    - [ ] Action Results e Formatadores de Respostas
+    - [x] Action Results e Formatadores de Respostas
     - [ ] Analisadores e Convenções
 
 - API REST
