@@ -537,6 +537,7 @@ Uma vantagem de usar o `ProducesResponseType` é que na hora de documentar usand
 #### <a id="analisadores-e-convencoes" /> Analisadores e Convenções
 
 **Analysers**
+Geram warnings de compilação e marcam o código para reforçar a necessidade de implementar um [ProducesResponseType] adequado para cada código de retorno utilizado no método.
 
 - O análisador de código utilizado foi o pacote `Microsoft Asp Net Core Mvc Api Analyzers`;
 
@@ -550,7 +551,9 @@ Desta forma, será necessário criar um novo tipo de resposta como status code 2
 
 ![image](https://user-images.githubusercontent.com/34458509/124411295-a1510480-dd22-11eb-8f31-a0fde8e8bb63.png)
 
-**Convenções**
+**Conventions**
+
+Implementam automaticamente o recurso [ProducesResponseType] para cada código de retorno utilizado no método, assim facilitando a documentação da API.
 
 No exemplo anterior, seria necessário indicar todos os possíveis status code que geralmente são padrões de retorno de uma API, para não ser necessário esta repetição existe uma convenção que se trata do uso do seguinte decorator `ApiConventionMethod`
 
