@@ -268,9 +268,37 @@ Uma vantagem de usar o `ProducesResponseType` é que na hora de documentar usand
 
 #### <a id="analisadores-e-convencoes" /> Analisadores e Convenções
 
-- Para o análisador de código utilizado foi o pacote `Microsoft Asp Net Core Mvc Api Analyzers`;
+**Analysers**
+Geram warnings de compilação e marcam o código para reforçar a necessidade de implementar um [ProducesResponseType] adequado para cada código de retorno utilizado no método.
+
+- O análisador de código utilizado foi o pacote `Microsoft Asp Net Core Mvc Api Analyzers`;
 
 Exemplo do funcionamento:
 
-Nesta implementação, quando coloco erro 200
+Nesta implementação, quando coloco para retornar o status code 200, o analisador de código executa e da um warning indicando que não foi definido que o tipo de resposta deste método poderia ser um status code 200
 
+![image](https://user-images.githubusercontent.com/34458509/124411105-45867b80-dd22-11eb-9af3-23ce8505d9bc.png)
+
+Desta forma, será necessário criar um novo tipo de resposta como status code 200
+
+![image](https://user-images.githubusercontent.com/34458509/124411295-a1510480-dd22-11eb-8f31-a0fde8e8bb63.png)
+
+**Conventions**
+
+Implementam automaticamente o recurso [ProducesResponseType] para cada código de retorno utilizado no método, assim facilitando a documentação da API.
+
+No exemplo anterior, seria necessário indicar todos os possíveis status code que geralmente são padrões de retorno de uma API, para não ser necessário esta repetição existe uma convenção que se trata do uso do seguinte decorator `ApiConventionMethod`
+
+![image](https://user-images.githubusercontent.com/34458509/124412104-27ba1600-dd24-11eb-9b42-85ae5682a81a.png)
+
+Outro exemplo com o método Put
+
+![image](https://user-images.githubusercontent.com/34458509/124412515-13c2e400-dd25-11eb-8b44-f57062cbb1d5.png)
+
+Outra coisa bacana, é que no começo da sua controller você pode declarar esse decorator `ApiConventionType` e desta forma você indica que a sua API vai seguir as boas práticas implementada sem necessidade de informar método a método
+
+![image](https://user-images.githubusercontent.com/34458509/124412693-75834e00-dd25-11eb-84d5-8658c5a5a076.png)
+
+Outra opção, para não precisar indicar controller por controller é configurar esse decorator dentro do `Startup`, dessa forma para toda a sua aplicação será usado as boas práticas do `ApiConventionType` 
+
+![image](https://user-images.githubusercontent.com/34458509/124412986-15d97280-dd26-11eb-8ab8-50ca4444f215.png)
