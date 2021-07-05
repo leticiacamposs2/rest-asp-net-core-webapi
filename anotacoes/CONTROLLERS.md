@@ -560,5 +560,10 @@ Outro exemplo com o método Put
 
 ![image](https://user-images.githubusercontent.com/34458509/124412515-13c2e400-dd25-11eb-8b44-f57062cbb1d5.png)
 
+Outra coisa bacana, é que no começo da sua controller você pode declarar esse decorator `ApiConventionType` e desta forma você indica que a sua API vai seguir as boas práticas implementada sem necessidade de informar método a método
 
+![image](https://user-images.githubusercontent.com/34458509/124412693-75834e00-dd25-11eb-84d5-8658c5a5a076.png)
 
+Outra opção, para não precisar indicar controller por controller é configurar esse decorator dentro do `Startup`, dessa forma para toda a sua aplicação será usado as boas práticas do `ApiConventionType` 
+
+![image](https://user-images.githubusercontent.com/34458509/124412986-15d97280-dd26-11eb-8ab8-50ca4444f215.png)
