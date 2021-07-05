@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace ProductsAPI.Controllers
 {
     [ApiController]
+    [ApiConventionType(typeof(DefaultApiConventions))]
     [Route("[controller]")]
     public class TesteController : ControllerBase
     {
@@ -46,15 +47,43 @@ namespace ProductsAPI.Controllers
         }
 
         //POST /teste
+        //[HttpPost]
+        //[ProducesResponseType(typeof(Product), StatusCodes.Status201Created)]
+        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
+        //public ActionResult Post(Product product)
+        //{
+        //    if (product.Id == 0) return BadRequest();
+
+        //    // add no banco
+        //    return CreatedAtAction("Post", product);
+        //}
+
+
+        //POST /teste
         [HttpPost]
-        [ProducesResponseType(typeof(Product), StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ApiConventionMethod(typeof(DefaultApiConventions),
+                        nameof(DefaultApiConventions.Post))]
         public ActionResult Post(Product product)
         {
             if (product.Id == 0) return BadRequest();
 
             // add no banco
             return CreatedAtAction("Post", product);
+        }
+
+
+        //PUT /teste/5
+        [HttpPut("{id}")]
+        [ApiConventionMethod(typeof(DefaultApiConventions),
+                        nameof(DefaultApiConventions.Put))]
+        public ActionResult Put([FromRoute] int id, [FromForm] Product product)
+        {
+            if (!ModelState.IsValid) return BadRequest();
+
+            if (id != product.Id) return NotFound();
+
+            // add no banco
+            return NoContent();
         }
 
 
@@ -72,3 +101,5 @@ namespace ProductsAPI.Controllers
     }
 
 }
+
+

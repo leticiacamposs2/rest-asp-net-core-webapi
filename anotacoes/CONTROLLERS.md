@@ -7,6 +7,7 @@ Controller é muito importante para uma aplicação ASP .Net seja ela MVC ou Web
 - [Propriedades da ControllerBase](#propriedades-controller-base)
 - [Rotas](#rotas)
 - [Action Results e Formatadores de Respostas](#action-results)
+- [Analisadores e Convenções](#analisadores-e-convencoes)
 
 ## <a id="anotacoes" /> 📖 Anotações
 
@@ -264,3 +265,12 @@ Com o uso do `ProducesResponseType` vai ser resolvido o tipo, no meu caso ele va
 ```
 
 Uma vantagem de usar o `ProducesResponseType` é que na hora de documentar usando o Swagger por exemplo ele já vai entender os tipos de retornos possíveis e o que ela devolve.
+
+#### <a id="analisadores-e-convencoes" /> Analisadores e Convenções
+
+- Para o análisador de código utilizado foi o pacote `Microsoft Asp Net Core Mvc Api Analyzers`;
+
+Exemplo do funcionamento:
+
+Nesta implementação, quando coloco erro 200
+
