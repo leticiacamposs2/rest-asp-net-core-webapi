@@ -536,6 +536,8 @@ Uma vantagem de usar o `ProducesResponseType` é que na hora de documentar usand
 
 #### <a id="analisadores-e-convencoes" /> Analisadores e Convenções
 
+**Analysers**
+
 - O análisador de código utilizado foi o pacote `Microsoft Asp Net Core Mvc Api Analyzers`;
 
 Exemplo do funcionamento:
@@ -547,3 +549,16 @@ Nesta implementação, quando coloco para retornar o status code 200, o analisad
 Desta forma, será necessário criar um novo tipo de resposta como status code 200
 
 ![image](https://user-images.githubusercontent.com/34458509/124411295-a1510480-dd22-11eb-8f31-a0fde8e8bb63.png)
+
+**Convenções**
+
+No exemplo anterior, seria necessário indicar todos os possíveis status code que geralmente são padrões de retorno de uma API, para não ser necessário esta repetição existe uma convenção que se trata do uso do seguinte decorator `ApiConventionMethod`
+
+![image](https://user-images.githubusercontent.com/34458509/124412104-27ba1600-dd24-11eb-9b42-85ae5682a81a.png)
+
+Outro exemplo com o método Put
+
+![image](https://user-images.githubusercontent.com/34458509/124412515-13c2e400-dd25-11eb-8b44-f57062cbb1d5.png)
+
+
+
