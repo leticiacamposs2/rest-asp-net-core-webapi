@@ -11,11 +11,11 @@ namespace ProductsAPI.Migrations
                 name: "Fornecedores",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Nome = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Documento = table.Column<string>(type: "nvarchar(14)", maxLength: 14, nullable: false),
-                    TipoFornecedor = table.Column<int>(type: "int", nullable: false),
-                    Ativo = table.Column<bool>(type: "bit", nullable: false)
+                    Id = table.Column<Guid>(nullable: false),
+                    Nome = table.Column<string>(maxLength: 100, nullable: false),
+                    Documento = table.Column<string>(maxLength: 14, nullable: false),
+                    TipoFornecedor = table.Column<int>(nullable: false),
+                    Ativo = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {

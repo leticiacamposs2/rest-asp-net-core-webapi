@@ -89,6 +89,7 @@ namespace ProductsAPI.Controllers
         }
 
         // DELETE: api/Fornecedores/5
+        [HttpDelete("{id}")]
         public async Task<ActionResult<Fornecedor>> DeleteFornecedor(Guid? id)
         {
             if (id == null)
