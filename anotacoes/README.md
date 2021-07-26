@@ -18,7 +18,7 @@
     - [x] Analisadores e Convenções
 
 - [API REST](./API-REST.md)
-    - [ ] CRUD básico
+    - [x] [CRUD básico](../ProductsAPI)
     - [ ] Setup
     - [ ] Fluxo da arquitetura
     - [ ] DTOs (ViewModels)
