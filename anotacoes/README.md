@@ -19,7 +19,7 @@
 
 - [API REST](./API-REST.md)
     - [x] [CRUD básico](../ProductsAPI)
-    - [ ] Setup
+    - [x] Setup
     - [ ] Fluxo da arquitetura
     - [ ] DTOs (ViewModels)
     - [ ] Controllers e Startup
