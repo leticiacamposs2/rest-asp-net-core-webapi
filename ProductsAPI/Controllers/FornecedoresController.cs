@@ -38,7 +38,6 @@ namespace ProductsAPI.Controllers
             //var fornecedor = await _context.Fornecedores.FirstOrDefaultAsync(m => m.Id == id);
             var fornecedor = await _context.Fornecedores.FindAsync(id);
 
-
             if (fornecedor == null)
             {
                 return NotFound();
