@@ -15,10 +15,10 @@
     - [x] Controller Diferenciada
     - [x] Rotas
     - [x] Action Results e Formatadores de Respostas
-    - [ ] Analisadores e Convenções
+    - [x] Analisadores e Convenções
 
-- API REST
-    - [ ] CRUD básico
+- [API REST](./API-REST.md)
+    - [x] [CRUD básico](../ProductsAPI)
     - [ ] Setup
     - [ ] Fluxo da arquitetura
     - [ ] DTOs (ViewModels)

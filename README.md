@@ -6,7 +6,7 @@ Repositório com os fontes e algumas anotações do estudo para criação de uma
 
 - [x] [REST](./anotacoes/REST.md)
 - [x] [Aplicação WEBAPI](./anotacoes/WEBAPI.md)
-- [X] [Controllers](./anotacoes/CONTROLLERS.md)
+- [x] [Controllers](./anotacoes/CONTROLLERS.md)
 - [ ] [API REST](./anotacoes/API-REST.md)
 - [ ] Segurança
 - [ ] Versionamento e Documentação
