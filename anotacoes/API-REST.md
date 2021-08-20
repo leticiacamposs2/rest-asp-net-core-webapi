@@ -56,3 +56,8 @@
 ![gravacao3](https://user-images.githubusercontent.com/34458509/129829353-310d43ef-76ab-4394-9050-69e91c23c971.png)
 
   Segue o mesmo fluxo acima, só que a informação será gravada no banco, a camada de negócios vai terminar esse processo que envolve a atualização no banco de dados e vai informar a API que terminou a API vai obter a lista de eventos para verificar se teve algum erro e no caso de não encontrando erros ela irá pegar esse produto do qual foi persistido na base e que já possui visto que recebeu via input e irá serializar e devolver para o client através de um response com o código 200.
+
+
+### AutoMapper
+
+- Necessário instalar o pacote: `install-package AutoMapper.Extensions.Microsoft.DependencyInjection`
